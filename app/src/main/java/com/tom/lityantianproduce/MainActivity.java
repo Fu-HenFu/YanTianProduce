@@ -23,7 +23,7 @@ import com.tom.lityantianproduce.thread.PhoneInfoRunnable;
 
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity {
     private static final int REQUEST_READ_PHONE_STATE_PERMISSION = 0;
 
     private static final int REQUEST_FINE_LOCATION_PERMISSION = 1;
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             return insets;
         });
 
-        findViewById(R.id.action_btn).setOnClickListener(this);
+//        findViewById(R.id.action_btn).setOnClickListener(this);
 
         WifiManager wifiManager = (WifiManager) getSystemService(Context.WIFI_SERVICE);
         List<WifiConfiguration> configurationList = wifiManager.getConfiguredNetworks ();
@@ -78,14 +78,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    @Override
-    public void onClick(View view) {
-        int view_id = view.getId();
-        if (view_id == R.id.action_btn) {
-            getPhoneInfo();
-        }
-
-    }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
